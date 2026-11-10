@@ -37,9 +37,9 @@ img, canvas { display: block; max-width: 100%; }
 .skip:focus { transform: translateY(0); }
 
 .cover { --story-travel: clamp(860px, 142svh, 1360px); position: relative; background: var(--dark); color: #f8f3e7; }
-.header { display: flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 110px; border-bottom: 1px solid #ffffff21; }
-.brand { display: block; flex: 0 0 auto; width: 190px; height: 93px; overflow: hidden; background: #fff; border-radius: 2px; }
-.brand img { position: relative; top: 50%; width: 116%; max-width: none; height: auto; margin-left: -8%; transform: translateY(-48%); }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 84px; border-bottom: 1px solid #ffffff21; }
+.brand { display: grid; place-items: center; flex: 0 0 auto; width: 68px; min-height: 60px; }
+.brand img { width: 100%; height: auto; }
 .nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 42px); font-size: 13px; color: #d8d8cc; }
 .nav a:hover, .header-contact:hover, .text-link:hover { color: var(--gold); }
 .header-contact { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; border: 1px solid #d4b47765; padding: 0 17px; font-size: 13px; }
@@ -232,8 +232,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
 }
 @media (max-width: 610px) {
   .shell { width: calc(100% - 36px); }
-  .header { min-height: 91px; gap: 10px; }
-  .brand { width: 157px; height: 77px; }
+  .header { min-height: 67px; gap: 10px; }
+  .brand { width: 53px; min-height: 48px; }
   .nav { display: none; }
   .header-contact { min-height: 40px; padding-inline: 9px; gap: 5px; font-size: 11px; }
   .header-contact .icon { width: 13px; height: 13px; }
