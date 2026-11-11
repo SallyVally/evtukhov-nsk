@@ -7,8 +7,8 @@
   <meta name="description" content="ЕвтуховНедвижимость — покупка и продажа недвижимости, помощь с оформлением ипотеки и юридическое сопровождение сделок.">
   <title>ЕвтуховНедвижимость — агентство недвижимости</title>
   <link rel="icon" href="./assets/mark.png" type="image/png">
-  <link rel="stylesheet" href="./site.css?v=537502a678ff">
-  <script defer src="./site.js?v=b495b188e44a"></script>
+  <link rel="stylesheet" href="./site.css?v=f6f3c8b18f55">
+  <script defer src="./site.js?v=0e69a6b833f1"></script>
 </head>
 <body>
   <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -27,10 +27,11 @@
     <div class="cover-frame">
       <div class="header shell">
         <a class="brand" href="#top" aria-label="ЕвтуховНедвижимость, главная">
-          <img src="./assets/mark.png" width="400" height="329" alt="">
+          <span class="brand-mark"><img src="./assets/mark.png" width="400" height="329" alt=""></span>
         </a>
         <nav class="nav" aria-label="Разделы сайта">
           <a href="#services">Услуги</a>
+          <a href="#mortgage">Ипотека</a>
           <a href="#about">Об агентстве</a>
           <a href="#reviews">Отзывы</a>
         </nav>
@@ -42,7 +43,7 @@
             <div class="hero-chapter">
               <p class="eyebrow light"><span class="line"></span> 01 / Подбор и оценка</p>
               <h1 id="hero-title" class="hero-title">Недвижимость<br><em>с ясным планом</em></h1>
-              <p class="hero-lead">Подбираем жильё для покупки и оцениваем недвижимость перед продажей.</p>
+              <p class="hero-lead">Помогаем купить и продать недвижимость. От первого разговора до расчёта и передачи ключей.</p>
             </div>
             <div class="hero-chapter" hidden>
               <p class="eyebrow light"><span class="line"></span> 02 / Проверка</p>
@@ -52,7 +53,7 @@
             <div class="hero-chapter" hidden>
               <p class="eyebrow light"><span class="line"></span> 03 / Оформление</p>
               <h2 class="hero-title">От условий<br><em>до подписания</em></h2>
-              <p class="hero-lead">Обсуждаем цену и условия с другой стороной, согласуем порядок расчётов и сопровождаем оформление.</p>
+              <p class="hero-lead">Ведём переговоры, готовим документы и согласуем расчёты. Каждый следующий шаг понятен заранее.</p>
             </div>
           </div>
         </div>
@@ -84,7 +85,7 @@
         <p class="eyebrow"><span class="line"></span> 01 / Услуги</p>
         <h2 id="services-title">У каждой сделки<br>свой маршрут</h2>
       </div>
-      <p>Помогаем купить и продать недвижимость, оформить ипотеку и провести сделку в сложных случаях.</p>
+      <p>Учитываем ваши планы, сроки и особенности объекта. Берём на себя подбор, переговоры и юридическое сопровождение.</p>
     </div>
     <div class="routes">
       <div class="route-tabs" aria-label="Выбор услуги" hidden>
@@ -102,24 +103,25 @@
       <div class="route-details">
         <article class="route-panel" id="route-buy" aria-labelledby="tab-buy">
           <p class="eyebrow route-kicker">01 / Покупка</p>
-          <h3>От поиска до ключей</h3>
+          <h3>От ваших пожеланий до ключей</h3>
           <ol class="steps">
-            <li><strong>Выясняем, какое жильё вам подходит</strong><span>Обсуждаем ваши пожелания и бюджет. Если нужна ипотека, помогаем с оформлением.</span></li>
-            <li><strong>Сравниваем варианты</strong><span>Подбираем объекты, организуем просмотры и ведём переговоры.</span></li>
-            <li><strong>Юридически сопровождаем сделку</strong><span>Проверяем объект, документы и собственников, объясняем риски и сопровождаем оформление.</span></li>
+            <li><strong>Начинаем с ваших планов</strong><span>Обсуждаем, где и как вы хотите жить. Определяем бюджет и требования к недвижимости.</span></li>
+            <li><strong>Находим и сравниваем</strong><span>Подбираем подходящие варианты, организуем просмотры и ведём переговоры о цене и условиях покупки.</span></li>
+            <li><strong>Проверяем и сопровождаем</strong><span>Проводим юридическую проверку объекта и собственников, оцениваем риски и сопровождаем сделку до передачи ключей.</span></li>
           </ol>
           <a class="route-action" href="#contact"
              data-contact-topic="buy"
              data-contact-title="Обсудим покупку?"
              data-contact-prompt="Расскажите, какой объект ищете, в каком районе и на какой бюджет ориентируетесь."
              data-contact-subject="Покупка недвижимости">Обсудить покупку <svg class="icon"><use href="#i-up"/></svg></a>
+          <a class="route-note" href="#mortgage">Планируете покупку в ипотеку? Поможем с оформлением.</a>
         </article>
         <article class="route-panel" id="route-sell" aria-labelledby="tab-sell">
           <p class="eyebrow route-kicker">02 / Продажа</p>
           <h3>От оценки до расчёта</h3>
           <ol class="steps">
-            <li><strong>Оцениваем объект</strong><span>Сравниваем цены в актуальных объявлениях и в завершённых сделках с похожими объектами.</span></li>
-            <li><strong>Готовим объект к продаже</strong><span>Даём рекомендации по подготовке, организуем профессиональную фото- и видеосъёмку и проводим показы.</span></li>
+            <li><strong>Определяем рыночную цену</strong><span>Изучаем особенности объекта, актуальные предложения и состоявшиеся сделки с похожей недвижимостью. Вместе выбираем цену и стратегию продажи.</span></li>
+            <li><strong>Представляем объект покупателям</strong><span>Рекомендуем, как подготовить недвижимость, организуем профессиональную фото- и видеосъёмку, проводим показы и ведём переговоры.</span></li>
             <li><strong>Сопровождаем оформление</strong><span>Проверяем документы и согласовываем порядок расчётов.</span></li>
           </ol>
           <a class="route-action" href="#contact"
@@ -130,11 +132,11 @@
         </article>
         <article class="route-panel" id="route-complex" aria-labelledby="tab-complex">
           <p class="eyebrow route-kicker">03 / Сопровождение</p>
-          <h3>Когда нужен отдельный план</h3>
+          <h3>Находим решение в деталях</h3>
           <ol class="steps">
-            <li><strong>Разбираемся в ситуации</strong><span>Уточняем задачу, сроки и что уже известно об объекте.</span></li>
-            <li><strong>Проводим юридическую проверку</strong><span>Проверяем объект и собственников, оцениваем риски и объясняем, какие вопросы нужно решить до подписания договора.</span></li>
-            <li><strong>Согласовываем действия</strong><span>Составляем порядок шагов и сопровождаем их выполнение.</span></li>
+            <li><strong>Разбираемся в вашей задаче</strong><span>Изучаем ситуацию, документы и договорённости сторон. Выясняем, что мешает провести сделку и какие сроки важно соблюсти.</span></li>
+            <li><strong>Проверяем объект и собственников</strong><span>Проводим юридическую проверку, оцениваем риски и объясняем, какие вопросы нужно решить до подписания договора.</span></li>
+            <li><strong>Выстраиваем порядок действий</strong><span>Согласуем условия со сторонами, помогаем подготовить документы и сопровождаем оформление и расчёты.</span></li>
           </ol>
           <a class="route-action" href="#contact"
              data-contact-topic="complex"
@@ -146,23 +148,98 @@
     </div>
   </section>
 
+  <section id="mortgage" class="mortgage section" aria-labelledby="mortgage-title">
+    <div class="shell">
+      <div class="mortgage-head">
+        <div>
+          <p class="eyebrow light"><span class="line"></span> 02 / Ипотека</p>
+          <h2 id="mortgage-title">Ипотека под<br><em>вашу ситуацию</em></h2>
+        </div>
+        <div class="mortgage-intro">
+          <p>Помогаем подобрать программу, подготовить документы и пройти рассмотрение в банке. Внимательно разбираем и те случаи, где нужен индивидуальный подход.</p>
+          <a class="route-action" href="#contact"
+             data-contact-topic="mortgage"
+             data-contact-title="Обсудим вашу ипотеку?"
+             data-contact-prompt="Расскажите, что планируете купить и какие обстоятельства важно учесть при подаче заявки."
+             data-contact-subject="Помощь с ипотекой">Обсудить ипотеку <svg class="icon"><use href="#i-up"/></svg></a>
+        </div>
+      </div>
+
+      <ol class="mortgage-process">
+        <li><span>01</span><strong>Начинаем с возможностей</strong><p>Обсуждаем бюджет, первоначальный взнос и способы подтверждения дохода.</p></li>
+        <li><span>02</span><strong>Подбираем банк и программу</strong><p>Сравниваем доступные варианты с учётом вашей задачи и требований банков.</p></li>
+        <li><span>03</span><strong>Сопровождаем оформление</strong><p>Помогаем собрать документы, подать заявку и пройти этапы ипотечной сделки.</p></li>
+      </ol>
+
+      <div class="mortgage-cases-head">
+        <h3>У каждой заявки<br>свои обстоятельства</h3>
+        <p>Расскажите о них на первой встрече. Так мы сможем предложить подходящий порядок действий.</p>
+      </div>
+      <ul class="mortgage-cases">
+        <li><strong>Семейная ипотека</strong><p>Разбираемся в требованиях программы и готовим документы с учётом состава вашей семьи.</p></li>
+        <li><strong>Военная ипотека</strong><p>Помогаем с документами и покупкой жилья по программе для военнослужащих.</p></li>
+        <li><strong>ИП, самозанятые и владельцы бизнеса</strong><p>Учитываем форму занятости и подбираем варианты подтверждения дохода для банка.</p></li>
+        <li><strong>Ипотека для пенсионеров</strong><p>Рассматриваем варианты с учётом возраста, источников дохода и требований банка.</p></li>
+        <li><strong>Сложная кредитная история</strong><p>Изучаем обстоятельства и причины прошлых отказов. Помогаем подготовить заявку для индивидуального рассмотрения.</p></li>
+        <li><strong>Разные источники дохода</strong><p>Помогаем разобраться, какие документы могут подтвердить ваш доход при подаче заявки.</p></li>
+        <li><strong>Объект с перепланировкой</strong><p>Изучаем документы и выясняем, на каких условиях банк готов рассмотреть такую недвижимость.</p></li>
+        <li><strong>Недвижимость в залоге</strong><p>Помогаем выстроить порядок погашения действующего кредита и проведения новой сделки.</p></li>
+      </ul>
+      <p class="mortgage-note">Решение по заявке и условия кредитования определяет банк после рассмотрения документов.</p>
+    </div>
+  </section>
+
+  <section id="partners" class="partners section shell" aria-labelledby="partners-title">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow"><span class="line"></span> Наши партнёры</p>
+        <h2 id="partners-title">Банки и сервисы,<br>с которыми работаем</h2>
+      </div>
+      <p>Подбираем решение под вашу задачу и взаимодействуем с банком на всех этапах оформления.</p>
+    </div>
+    <!-- Official brand sources, checked 2026-11-11:
+      Sber and Domclick: https://domclick.ru/domclick_logo.svg
+      VTB: https://www.vtb.ru/media-files/vtb.ru/shared/logogeneral/Main_ic_LogoVTBlight.svg
+      Alfa: https://alfabank.servicecdn.ru/site-upload/c7/97/837/alfa-brandbook.pdf (page 15)
+      PSB: https://www.psbank.ru/qp/qparchives/PSB_logo.zip (RGB_screen/SVG, light background)
+      Sovcombank: https://people.sovcombank.ru/ (header wordmark)
+      Absolut: https://absolutbank.ru/brand/ (original logo paths from brand artwork)
+      BSPB: https://www.bspb.ru/image/logo/bspb_icon_180x180.png
+      UBRiR: https://www.ubrr.ru/ (header SVG)
+      M2: https://cdn.m2.ru/assets/images/m2logo.svg
+    -->
+    <ul class="partners-grid" aria-label="Банки и сервисы недвижимости">
+      <li class="partner" style="--order: 0"><img src="./assets/partner-sber.svg" alt="Сбер" width="220" height="60" loading="lazy" decoding="async"></li>
+      <li class="partner partner-small" style="--order: 1"><img src="./assets/partner-vtb.svg" alt="ВТБ" width="160" height="60" loading="lazy" decoding="async"></li>
+      <li class="partner" style="--order: 2"><img src="./assets/partner-alfa.png" alt="Альфа-Банк" width="220" height="60" loading="lazy" decoding="async"></li>
+      <li class="partner partner-small" style="--order: 3"><img src="./assets/partner-psb.svg" alt="ПСБ" width="160" height="60" loading="lazy" decoding="async"></li>
+      <li class="partner partner-sovcom" style="--order: 4"><img src="./assets/partner-sovcom.svg" alt="Совкомбанк" width="220" height="60" loading="lazy" decoding="async"></li>
+      <li class="partner partner-small" style="--order: 5"><img src="./assets/partner-absolut.svg" alt="Абсолют Банк" width="180" height="60" loading="lazy" decoding="async"></li>
+      <li class="partner partner-bspb" style="--order: 6"><img src="./assets/partner-bspb.png" alt="Банк Санкт-Петербург" width="45" height="45" loading="lazy" decoding="async"><span aria-hidden="true">Банк<br>Санкт-Петербург</span></li>
+      <li class="partner" style="--order: 7"><img src="./assets/partner-ubrir.svg" alt="УБРиР" width="220" height="60" loading="lazy" decoding="async"></li>
+      <li class="partner" style="--order: 8"><img src="./assets/partner-domclick.svg" alt="Домклик" width="220" height="60" loading="lazy" decoding="async"></li>
+      <li class="partner" style="--order: 9"><img src="./assets/partner-m2.svg" alt="Метр квадратный" width="220" height="60" loading="lazy" decoding="async"></li>
+    </ul>
+  </section>
+
   <section id="about" class="about section shell" aria-labelledby="about-title">
     <figure class="portrait">
       <img src="./assets/sergey.webp" alt="Сергей Евтухов" width="880" height="1173" loading="lazy">
       <figcaption><span>Сергей Евтухов</span><small>ЕвтуховНедвижимость</small></figcaption>
     </figure>
     <div class="about-copy">
-      <p class="eyebrow"><span class="line"></span> 02 / Об агентстве</p>
+      <p class="eyebrow"><span class="line"></span> 03 / Об агентстве</p>
       <h2 id="about-title">Сергей Евтухов</h2>
-      <p class="about-lead">Более 10 лет работаю с недвижимостью и лично сопровождаю сделки.</p>
-      <p>У меня юридическое образование. За эти годы провёл много сделок разной сложности. Помогаю разобраться в цене, условиях и документах, веду переговоры и остаюсь на связи до завершения сделки.</p>
+      <p class="about-lead">Помогаю покупать и продавать недвижимость, когда важны и результат, и спокойствие на каждом этапе.</p>
+      <p>За более чем десять лет практики я провёл сделки разной сложности. Юридическое образование помогает смотреть глубже условий объявления — разбираться в документах, видеть риски и заранее находить решение.</p>
+      <p>Лично веду вашу задачу от первого разговора до завершения сделки. Объясняю варианты понятным языком, беру на себя переговоры и держу вас в курсе происходящего.</p>
       <a href="#contact" class="text-link ink-link">Связаться с Сергеем <svg class="icon"><use href="#i-up"/></svg></a>
     </div>
   </section>
 
   <section id="reviews" class="reviews section" aria-labelledby="reviews-title">
     <div class="shell">
-      <p class="eyebrow"><span class="line"></span> 03 / Отзывы</p>
+      <p class="eyebrow"><span class="line"></span> 04 / Отзывы</p>
       <h2 id="reviews-title">Что говорят клиенты</h2>
       <div class="quotes">
         <figure class="quote quote-feature"><div class="quote-mark" aria-hidden="true">“</div>
@@ -200,7 +277,7 @@
   <section id="contact" class="contact section" aria-labelledby="contact-title">
     <div class="shell contact-inner">
       <div class="contact-copy">
-        <p class="eyebrow light"><span class="line"></span> 04 / Контакты</p>
+        <p class="eyebrow light"><span class="line"></span> 05 / Контакты</p>
         <h2 id="contact-title">Обсудим вашу сделку?</h2>
         <p class="contact-prompt">Расскажите о вашей ситуации. Начнём с того, какие шаги можно предпринять.</p>
       </div>
@@ -213,6 +290,7 @@
           <div class="draft-choices">
             <label class="draft-choice"><input type="radio" name="draft-topic" value="buy" checked><span>Покупка</span></label>
             <label class="draft-choice"><input type="radio" name="draft-topic" value="sell"><span>Продажа</span></label>
+            <label class="draft-choice"><input type="radio" name="draft-topic" value="mortgage"><span>Ипотека</span></label>
             <label class="draft-choice"><input type="radio" name="draft-topic" value="complex"><span>Сопровождение</span></label>
           </div>
         </fieldset>
@@ -240,6 +318,15 @@
           </label>
           <label class="draft-field">С чем нужна помощь?
             <input type="text" data-detail="Нужна помощь" maxlength="120" autocomplete="off" placeholder="Проверить документы">
+          </label>
+        </div>
+
+        <div class="draft-fields" data-draft-fields="mortgage" hidden>
+          <label class="draft-field">Что планируете купить?
+            <input type="text" data-detail="Покупка" maxlength="120" autocomplete="off" placeholder="Квартиру в новостройке">
+          </label>
+          <label class="draft-field">Что важно учесть?
+            <input type="text" data-detail="Обстоятельства" maxlength="120" autocomplete="off" placeholder="Например, самозанятость">
           </label>
         </div>
 

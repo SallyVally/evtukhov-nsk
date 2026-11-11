@@ -37,9 +37,14 @@ img, canvas { display: block; max-width: 100%; }
 .skip:focus { transform: translateY(0); }
 
 .cover { --story-travel: clamp(860px, 142svh, 1360px); position: relative; background: var(--dark); color: #f8f3e7; }
-.header { display: flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 84px; border-bottom: 1px solid #ffffff21; }
-.brand { display: grid; place-items: center; flex: 0 0 auto; width: 68px; min-height: 60px; }
-.brand img { width: 100%; height: auto; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 100px; border-bottom: 1px solid #ffffff21; }
+.brand { display: grid; place-items: center; flex: 0 0 auto; width: 86px; min-height: 78px; }
+.brand-mark { display: block; width: 100%; }
+.brand img { width: 100%; height: auto; filter: brightness(0) invert(1); }
+@supports (mask-image: url("")) or (-webkit-mask-image: url("")) {
+  .brand-mark { background: linear-gradient(115deg, #bd9250 5%, #fff0c9 48%, #c9a567 90%); -webkit-mask: url("./assets/mark.png") center / contain no-repeat; mask: url("./assets/mark.png") center / contain no-repeat; }
+  .brand img { opacity: 0; }
+}
 .nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 42px); font-size: 13px; color: #d8d8cc; }
 .nav a:hover, .header-contact:hover, .text-link:hover { color: var(--gold); }
 .header-contact { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; border: 1px solid #d4b47765; padding: 0 17px; font-size: 13px; }
@@ -114,6 +119,45 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
 .route-action { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 9px; padding: 0 13px; background: #e1d5ba; color: #3c3221; font-size: 13px; font-weight: 600; transition: background-color .2s; }
 .route-action:hover { background: #d9c79f; }
 .route-action .icon { width: 16px; height: 16px; }
+.route-note { display: block; width: fit-content; margin-top: 15px; font-size: 12px; color: #65502e; text-decoration: underline; text-underline-offset: 3px; }
+
+.mortgage { background: #20291f; color: #f6f0e3; }
+.mortgage :focus-visible { outline-color: var(--gold); }
+.mortgage-head { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(35px, 7vw, 100px); align-items: end; }
+.mortgage h2 em { font-style: normal; color: #e6c488; }
+.mortgage-intro { max-width: 470px; color: #d2d7c8; }
+.mortgage .route-action { margin-top: 23px; background: var(--gold); color: #28291f; }
+.mortgage .route-action:hover { background: #f0d69f; }
+.mortgage-process { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; list-style: none; margin: 54px 0 0; padding: 0; }
+.mortgage-process li { border-top: 1px solid #bec6ad40; padding-top: 18px; }
+.mortgage-process li > span { display: block; margin-bottom: 16px; font-size: 11px; letter-spacing: .08em; color: var(--gold); }
+.mortgage-process strong { display: block; font-weight: 500; font-size: 16px; }
+.mortgage-process p { max-width: 34ch; margin-top: 8px; color: #c5ccba; font-size: 13px; line-height: 1.65; }
+.mortgage-cases-head { display: flex; justify-content: space-between; align-items: end; gap: 35px; margin-top: 74px; }
+.mortgage-cases-head h3 { font-size: clamp(25px, 3vw, 40px); line-height: 1.22; letter-spacing: -.035em; }
+.mortgage-cases-head > p { max-width: 310px; color: #c5ccba; font-size: 13px; }
+.mortgage-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(30px, 6vw, 90px); list-style: none; margin: 28px 0 0; padding: 0; }
+.mortgage-cases li { padding: 21px 0; border-top: 1px solid #bec6ad40; }
+.mortgage-cases strong { display: block; font-size: 15px; font-weight: 500; color: #ece4d0; }
+.mortgage-cases p { max-width: 48ch; margin-top: 8px; color: #c0c8b7; font-size: 13px; }
+.mortgage-note { margin-top: 20px; max-width: 72ch; color: #b0baa5; font-size: 11px; }
+
+.partners-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; list-style: none; margin: 0; padding: 1px; background: var(--rule); }
+.partner { display: grid; place-items: center; min-height: 119px; padding: 22px; background: #fff; }
+.partner img { width: 100%; max-width: 168px; height: 45px; object-fit: contain; }
+.partner-small img { max-width: 135px; }
+.partner-sovcom { background: #133b68; }
+.partner-bspb { display: flex; justify-content: center; gap: 10px; }
+.partner-bspb img { width: 34px; height: 45px; }
+.partner-bspb span { color: #233e52; font-size: 12px; font-weight: 500; line-height: 1.4; }
+@media (prefers-reduced-motion: no-preference) {
+  .cover[data-entered] .hero-copy { animation: cover-copy-in 1s .2s both; }
+  .cover[data-entered] .brand-mark { animation: cover-mark-in 1s both; }
+  .partners[data-revealed] .partner { animation: partner-in .65s both; animation-delay: calc(var(--order) * 65ms); }
+}
+@keyframes cover-copy-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes cover-mark-in { from { opacity: .3; } to { opacity: 1; } }
+@keyframes partner-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
 .about { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(40px, 7.5vw, 120px); border-top: 1px solid var(--rule); }
 .portrait { overflow: hidden; position: relative; background: #292a28; aspect-ratio: 1.05; }
@@ -125,6 +169,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
 .about-copy { max-width: 540px; }
 .about-lead { font-weight: 500; color: var(--ink); font-size: clamp(18px, 2.1vw, 24px); margin: 20px 0 14px; }
 .about-copy p:not(.eyebrow):not(.about-lead) { color: var(--muted); max-width: 450px; }
+.about-copy p + p:not(.about-lead) { margin-top: 15px; }
 .ink-link { color: #564222; margin-top: 14px; }
 .ink-link .icon, .ink-link:hover { color: #816027; }
 
@@ -164,7 +209,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
 .draft-intro { max-width: 46ch; margin-top: 9px; color: #d8dace; font-size: 14px; line-height: 1.5; }
 .draft-topics { min-width: 0; margin: 22px 0 0; padding: 0; border: 0; }
 .draft-topics legend, .draft-field, .draft-message-heading label { color: #f4ecdc; font-size: 13px; font-weight: 600; }
-.draft-choices { display: grid; grid-template-columns: 1fr 1fr 1.3fr; margin-top: 7px; border: 1px solid #c8cdb354; }
+.draft-choices { display: grid; grid-template-columns: 1fr 1fr 1fr 1.3fr; margin-top: 7px; border: 1px solid #c8cdb354; }
 .draft-choice { position: relative; min-width: 0; }
 .draft-choice + .draft-choice { border-left: 1px solid #c8cdb354; }
 .draft-choice input { position: absolute; width: 1px; height: 1px; opacity: 0; }
@@ -225,6 +270,10 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
   .about { gap: 36px; }
   .portrait { aspect-ratio: .82; }
   .quotes { gap: 10px; }
+  .mortgage-head { gap: 30px; }
+  .mortgage-process { gap: 20px; }
+  .partners-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .partner { min-height: 100px; }
 }
 @media (max-width: 760px) {
   .contact-inner, .contact-inner:has(.contact-draft[hidden]) { grid-template-columns: minmax(0, 1fr); grid-template-areas: "intro" "draft" "links"; grid-template-rows: auto; gap: 24px; }
@@ -232,8 +281,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
 }
 @media (max-width: 610px) {
   .shell { width: calc(100% - 36px); }
-  .header { min-height: 67px; gap: 10px; }
-  .brand { width: 53px; min-height: 48px; }
+  .header { min-height: 82px; gap: 10px; }
+  .brand { width: 72px; min-height: 64px; }
   .nav { display: none; }
   .header-contact { min-height: 40px; padding-inline: 9px; gap: 5px; font-size: 11px; }
   .header-contact .icon { width: 13px; height: 13px; }
@@ -256,6 +305,25 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
   .route-tab small { font-size: 11px; }
   .route-panel { min-height: 0; }
   .steps span { font-size: 12px; }
+  .route-note { font-size: 11px; }
+  .mortgage-head { grid-template-columns: minmax(0, 1fr); gap: 23px; }
+  .mortgage-intro { font-size: 14px; }
+  .mortgage-process { grid-template-columns: minmax(0, 1fr); gap: 20px; margin-top: 35px; }
+  .mortgage-process li { display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 14px; padding-top: 15px; }
+  .mortgage-process li > span { grid-row: span 2; margin: 3px 0 0; }
+  .mortgage-process strong { font-size: 15px; }
+  .mortgage-process p { max-width: none; }
+  .mortgage-cases-head { display: block; margin-top: 47px; }
+  .mortgage-cases-head > p { margin-top: 15px; }
+  .mortgage-cases { grid-template-columns: minmax(0, 1fr); margin-top: 22px; }
+  .mortgage-cases li { padding-block: 18px; }
+  .mortgage-note { margin-top: 12px; }
+  .partner { min-height: 98px; padding: 20px 16px; }
+  .partner img { max-width: 142px; height: 35px; }
+  .partner-small img { max-width: 116px; }
+  .partner-bspb { gap: 7px; }
+  .partner-bspb img { width: 26px; height: 35px; }
+  .partner-bspb span { font-size: 10px; }
   .about { display: flex; flex-direction: column-reverse; gap: 22px; align-items: stretch; }
   .portrait { aspect-ratio: 1.1; }
   .about-copy { font-size: 14px; }
@@ -264,7 +332,9 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
   .quote { min-height: 0; }
   .quote blockquote { font-size: 14px; margin-bottom: 14px; }
   .contact-prompt { font-size: 14px; margin-top: 12px; }
-  .draft-choices { grid-template-columns: 1fr 1fr minmax(105px, 1.35fr); }
+  .draft-choices { grid-template-columns: 1fr 1fr; }
+  .draft-choice:nth-child(3) { border-left: 0; }
+  .draft-choice:nth-child(n + 3) { border-top: 1px solid #c8cdb354; }
   .draft-choice span { padding-inline: 3px; font-size: 12px; }
   .draft-fields { grid-template-columns: minmax(0, 1fr); gap: 10px; }
   .draft-field input, .draft-message textarea { font-size: 16px; }
