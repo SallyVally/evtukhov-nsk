@@ -345,3 +345,147 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Architectural editorial treatment */
+:root {
+  --dark: #111b1c;
+  --paper: #e8e3d7;
+  --ink: #172423;
+  --muted: #596562;
+  --gold: #cdb98e;
+  --rule: #b8bcb0;
+}
+body { background: var(--paper); }
+.cover { background: #101b1d; }
+.cover-frame {
+  background: radial-gradient(ellipse at 75% 45%, #344a49 0%, #1d302f 31%, #101b1d 72%);
+}
+.cover-frame::before {
+  background: radial-gradient(ellipse at 75% 48%, #344551, transparent 64%), #10191e;
+}
+.cover-frame::after {
+  content: ""; position: absolute; z-index: -1; inset: 0;
+  background: linear-gradient(90deg, transparent 49.95%, #d7e1d612 50%, transparent 50.05%),
+    linear-gradient(90deg, transparent 74.95%, #d7e1d60b 75%, transparent 75.05%);
+  pointer-events: none;
+}
+.header { min-height: 96px; }
+.brand { width: 78px; }
+.nav { gap: clamp(22px, 3.7vw, 52px); letter-spacing: .02em; }
+.header-contact { border-color: #c9d3c47a; background: #ffffff08; }
+.hero { grid-template-columns: minmax(310px, .9fr) minmax(0, 1.6fr); }
+.hero-copy { padding-block: 60px 80px; }
+.hero-coordinate {
+  position: absolute; top: 26px; right: 0; left: 0; display: flex; justify-content: space-between;
+  color: #a9b8aa; font-size: 9px; font-weight: 600; letter-spacing: .18em; pointer-events: none;
+}
+.hero-title { font-size: clamp(43px, 4.55vw, 72px); line-height: 1.08; letter-spacing: -.055em; }
+.hero-title em { color: #dec69e; }
+.hero-lead { color: #d7dfd3; max-width: 36ch; font-size: 16px; }
+.cover-foot { border-top-color: #d4e0d231; }
+.section { padding-block: clamp(84px, 8vw, 124px); }
+.section h2 { font-size: clamp(39px, 4.5vw, 68px); line-height: 1.12; }
+.section-head { margin-bottom: 58px; }
+.eyebrow { color: #74623f; }
+.route-tabs { border-top-color: #94a09a; }
+.route-tab { min-height: 102px; border-bottom-color: #adb6ac; padding-inline: 5px 15px; }
+.route-tab:hover { background: #dce0d3; }
+.route-tab[aria-selected="true"] { background: #d9ded2; color: #172a27; border-color: #607c70; box-shadow: inset 3px 0 #8c744e; padding-left: 16px; }
+.route-tab[aria-selected="true"] small { color: #526661; }
+.route-tab[aria-selected="true"] .icon { color: #98764c; }
+.route-tab[aria-selected="true"] .tab-arrow { transform: translateX(5px); }
+.route-panel { background: #d4dcd0; border: 0; padding: clamp(26px, 3.5vw, 50px); }
+.route-panel h3 { font-size: clamp(29px, 3vw, 42px); }
+.steps li { border-color: #aab7a8; padding-block: 14px; }
+.steps strong { font-size: 15px; }
+.steps span { font-size: 14px; line-height: 1.6; }
+.route-action { background: #1c3732; color: #f4f0e5; padding-inline: 18px; }
+.route-action:hover { background: #34564b; }
+.route-action .icon { color: #d9c59b; }
+.mortgage {
+  position: relative; overflow: hidden; background: #152a29;
+  background-image: radial-gradient(ellipse at 100% 10%, #405b50 0%, transparent 45%);
+}
+.mortgage::before {
+  content: "02"; position: absolute; right: -1vw; top: -.13em; color: #e8e9d90c;
+  font: 400 clamp(160px, 24vw, 390px)/1 var(--display); letter-spacing: -.08em; pointer-events: none;
+}
+.mortgage .shell { position: relative; }
+.mortgage h2 em, .partners h2 em { color: #ddc79d; font-style: normal; }
+.mortgage-process { margin-top: 70px; }
+.mortgage-process li > span { font-family: var(--display); font-size: 28px; line-height: 1; letter-spacing: -.04em; }
+.mortgage-process strong { font-size: 17px; }
+.mortgage-cases-head { margin-top: 92px; }
+.mortgage-cases li { padding-block: 25px; }
+.partners { overflow: hidden; }
+.partners h2 em { color: #6b8072; }
+.partners-intro {
+  display: flex; justify-content: space-between; gap: 16px; padding-block: 18px;
+  border-top: 1px solid #aeb6aa; border-bottom: 1px solid #aeb6aa;
+  color: #6b786d; font-size: 10px; font-weight: 600; letter-spacing: .16em;
+}
+.partners-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0 28px; padding: 0;
+  background: transparent;
+}
+.partner { min-height: 112px; padding: 24px 8px; background: transparent; border: 0; }
+.partner img { max-width: 150px; height: 41px; filter: grayscale(1); opacity: .8; mix-blend-mode: multiply; }
+.partner-small img { max-width: 122px; }
+.partner-sovcom { background: transparent; }
+.partner-sovcom img { filter: brightness(0); opacity: .7; mix-blend-mode: normal; }
+.partner-bspb img { max-width: 34px; }
+.partner-bspb span { color: #485652; }
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .partner img { animation: partner-drift linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+    .partner:nth-child(even) img { animation-name: partner-drift-reverse; }
+  }
+}
+@keyframes partner-drift { from { transform: translateX(-12px); } to { transform: translateX(12px); } }
+@keyframes partner-drift-reverse { from { transform: translateX(12px); } to { transform: translateX(-12px); } }
+.about { border-color: #aeb6aa; gap: clamp(44px, 7vw, 105px); }
+.portrait { aspect-ratio: .88; }
+.portrait img { object-position: center 18%; filter: saturate(.8); }
+.about-lead { line-height: 1.5; }
+.reviews { background: #d5dcd2; }
+.quotes { gap: 0 clamp(20px, 3vw, 48px); }
+.quote { min-height: 200px; background: transparent; border: 0; border-top: 1px solid #aebbb0; padding: 26px 0; }
+.quote-feature { min-height: 180px; border-top: 1px solid #92a397; }
+.quote-feature blockquote { font-family: var(--display); font-size: clamp(21px, 2.2vw, 30px); line-height: 1.45; letter-spacing: -.035em; }
+.quote-mark { color: #8c7956; }
+.contact { background: radial-gradient(ellipse at 90% 30%, #344f49, transparent 55%), #111f1e; }
+.contact-draft { background: #ffffff0a; border-color: #c5d1bd50; }
+.footer { background: #0d1919; }
+@media (max-width: 850px) {
+  .cover-frame { background-image: radial-gradient(ellipse at 50% 35%, #344a49, #172827 48%, #101b1d 82%); }
+  .hero-coordinate { top: 18px; }
+  .partners-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
+  .partner { min-height: 100px; }
+  .section { padding-block: 70px; }
+}
+@media (max-width: 610px) {
+  .header { min-height: 78px; }
+  .brand { width: 65px; min-height: 60px; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-coordinate { top: 12px; font-size: 8px; letter-spacing: .1em; }
+  .hero-coordinate span:last-child { display: none; }
+  .hero-title { font-size: clamp(33px, 8.4vw, 47px); }
+  .hero-lead { font-size: 14px; }
+  .section { padding-block: 62px; }
+  .section-head { margin-bottom: 32px; }
+  .route-tab { min-height: 75px; padding-left: 4px; }
+  .route-panel { padding: 25px 20px; }
+  .route-panel h3 { font-size: 27px; }
+  .steps span { font-size: 13px; }
+  .mortgage-process { margin-top: 38px; }
+  .mortgage-process li > span { font-size: 18px; }
+  .mortgage-cases-head { margin-top: 52px; }
+  .partners-grid { gap: 0 18px; }
+  .partner { min-height: 90px; padding: 18px 7px; }
+  .partner img { max-width: 130px; height: 32px; }
+  .partner-bspb img { width: 26px; height: 32px; }
+  .about { gap: 25px; }
+  .portrait { aspect-ratio: .95; }
+  .quote { min-height: 0; padding-block: 20px; }
+  .quote-feature { min-height: 0; }
+}
