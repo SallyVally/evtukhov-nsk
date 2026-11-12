@@ -38,13 +38,9 @@ img, canvas { display: block; max-width: 100%; }
 
 .cover { --story-travel: clamp(860px, 142svh, 1360px); position: relative; background: var(--dark); color: #f8f3e7; }
 .header { display: flex; align-items: center; justify-content: space-between; gap: 30px; min-height: 100px; border-bottom: 1px solid #ffffff21; }
-.brand { display: grid; place-items: center; flex: 0 0 auto; width: 86px; min-height: 78px; }
-.brand-mark { display: block; width: 100%; }
-.brand img { width: 100%; height: auto; filter: brightness(0) invert(1); }
-@supports (mask-image: url("")) or (-webkit-mask-image: url("")) {
-  .brand-mark { background: linear-gradient(115deg, #bd9250 5%, #fff0c9 48%, #c9a567 90%); -webkit-mask: url("./assets/mark.png") center / contain no-repeat; mask: url("./assets/mark.png") center / contain no-repeat; }
-  .brand img { opacity: 0; }
-}
+.brand { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 0 0 auto; width: 205px; gap: 3px; padding-block: 7px; }
+.brand-mark { display: block; width: 38%; }
+.brand img { width: 100%; height: auto; }
 .nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 42px); font-size: 13px; color: #d8d8cc; }
 .nav a:hover, .header-contact:hover, .text-link:hover { color: var(--gold); }
 .header-contact { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; border: 1px solid #d4b47765; padding: 0 17px; font-size: 13px; }
@@ -152,7 +148,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
 .partner-bspb span { color: #233e52; font-size: 12px; font-weight: 500; line-height: 1.4; }
 @media (prefers-reduced-motion: no-preference) {
   .cover[data-entered] .hero-copy { animation: cover-copy-in 1s .2s both; }
-  .cover[data-entered] .brand-mark { animation: cover-mark-in 1s both; }
+  .cover[data-entered] .brand { animation: cover-mark-in 1s both; }
   .partners[data-revealed] .partner { animation: partner-in .65s both; animation-delay: calc(var(--order) * 65ms); }
 }
 @keyframes cover-copy-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
@@ -282,7 +278,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; }
 @media (max-width: 610px) {
   .shell { width: calc(100% - 36px); }
   .header { min-height: 82px; gap: 10px; }
-  .brand { width: 72px; min-height: 64px; }
+  .brand { width: min(200px, calc(100vw - 150px)); }
   .nav { display: none; }
   .header-contact { min-height: 40px; padding-inline: 9px; gap: 5px; font-size: 11px; }
   .header-contact .icon { width: 13px; height: 13px; }
@@ -369,10 +365,15 @@ body { background: var(--paper); }
     linear-gradient(90deg, transparent 74.95%, #d7e1d60b 75%, transparent 75.05%);
   pointer-events: none;
 }
-.header { min-height: 96px; }
-.brand { width: 78px; }
+.header { position: relative; isolation: isolate; min-height: 114px; color: #21332f; border-color: #b7bdb0; }
+.header::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: #e8e3d7; }
+.brand { width: 205px; }
 .nav { gap: clamp(22px, 3.7vw, 52px); letter-spacing: .02em; }
-.header-contact { border-color: #c9d3c47a; background: #ffffff08; }
+.nav { color: #344841; }
+.nav a:hover, .header-contact:hover { color: #7a5d31; }
+.header-contact { color: #21332f; border-color: #9eaa9b; background: transparent; }
+.header-contact .icon { color: #806332; }
+.header :focus-visible { outline-color: #806332; }
 .hero { grid-template-columns: minmax(310px, .9fr) minmax(0, 1.6fr); }
 .hero-copy { padding-block: 60px 80px; }
 .hero-coordinate {
@@ -463,9 +464,12 @@ body { background: var(--paper); }
   .partner { min-height: 100px; }
   .section { padding-block: 70px; }
 }
+@media (max-width: 760px) {
+  .nav { display: none; }
+}
 @media (max-width: 610px) {
-  .header { min-height: 78px; }
-  .brand { width: 65px; min-height: 60px; }
+  .header { min-height: 100px; }
+  .brand { width: min(200px, calc(100vw - 150px)); min-height: 0; padding-block: 6px; }
   .hero { grid-template-columns: minmax(0, 1fr); }
   .hero-coordinate { top: 12px; font-size: 8px; letter-spacing: .1em; }
   .hero-coordinate span:last-child { display: none; }
